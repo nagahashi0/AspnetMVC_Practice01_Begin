@@ -21,5 +21,16 @@ namespace Practice01_Begin.Controllers
             //ContentResultクラスは引数に指定した文字列をテキスト形式で出力する。
             return Content("Hello World");
         }
+
+        public ActionResult Show()
+        {
+            //ViwBagはControllerの基底クラスであるControllerBaseクラスのプロパティ。
+            //
+            ViewBag.Greeting = "Hello World";
+
+            //ControllerクラスのViewメソッドはActionResult派生クラスであるViewResultクラスを返す。
+            //ViewResultクラスはアクションメソッドの結果を対応するビューを表示する。
+            return View();
+        }
     }
 }
