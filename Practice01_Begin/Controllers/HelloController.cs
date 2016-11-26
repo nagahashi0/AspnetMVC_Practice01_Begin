@@ -36,5 +36,14 @@ namespace Practice01_Begin.Controllers
             //ViewResultクラスはアクションメソッドの結果を対応するビューを表示する。
             return View();
         }
+
+        public ActionResult Greeting()
+        {
+            Models.Greeting grt = new Models.Greeting();
+            grt.Message = "Hello World";
+
+            return View(grt);
+
+        }
     }
 }
