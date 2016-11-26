@@ -5,3 +5,15 @@
 
 <h2>Show</h2>
 
+<h3>ViewDataの値を表示する</h3>
+<p>Messageの値：@ViewData["Message"]</p>
+<p>messageの値（キーは大文字小文字を区別しない）：@ViewData["message"]</p>
+<p>MSGの値（格納されていないキーを指定したときは何も表示されない）：@ViewData["MSG"]</p>
+
+
+<h3>ViewBagの値を表示する</h3>
+<p>Messageの値：@ViewBag.Message</p>
+<p>messageの値（プロパティ名は大文字小文字を区別しない）：@ViewBag.message</p>
+<p>MSGの値（定義していないプロパティ名を指定したときは何も表示されない）：@ViewBag.MSG</p>
+
+

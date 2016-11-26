@@ -24,9 +24,13 @@ namespace Practice01_Begin.Controllers
 
         public ActionResult Show()
         {
-            //ViwBagはControllerの基底クラスであるControllerBaseクラスのプロパティ。
-            //
-            ViewBag.Greeting = "Hello World";
+            //ViwDataはControllerの基底クラスであるControllerBaseクラスのプロパティ。
+            //名称をキーに値を格納するコレクション。
+            ViewData["Message"] = "Hello World";
+
+            //ViewBagはControllerの基底クラスであるControllerBaseクラスのプロパティ
+            //dynamic型の値を取得/設定できる。
+            ViewBag.Message = "Hello World";
 
             //ControllerクラスのViewメソッドはActionResult派生クラスであるViewResultクラスを返す。
             //ViewResultクラスはアクションメソッドの結果を対応するビューを表示する。
