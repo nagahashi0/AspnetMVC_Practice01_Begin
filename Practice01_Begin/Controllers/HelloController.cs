@@ -39,7 +39,7 @@ namespace Practice01_Begin.Controllers
 
         public ActionResult Greeting()
         {
-            Models.Greeting grt = new Models.Greeting();
+            Models.GreetingModels grt = new Models.GreetingModels();
             grt.Message = "Hello World";
 
             return View(grt);

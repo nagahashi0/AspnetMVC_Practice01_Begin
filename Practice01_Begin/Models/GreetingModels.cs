@@ -5,8 +5,7 @@ using System.Web;
 
 namespace Practice01_Begin.Models
 {
-    public class Greeting
-    {
+    public class GreetingViewModel    {
 
         public String Message { get; set; }
 
