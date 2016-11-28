@@ -1,0 +1,18 @@
+﻿@model Sep.ViewModels.Home.EditViewModel 
+
+<div class="container">
+    <div class="floating">
+        <p class="legend">Customers</p>
+        @using(Html.BeginForm("edit", "home"))
+        {
+            @Html.DropDownList("customerList", new SelectList(Model.Customers, "Id", "Company", Model.Customer.Id))
+            <input type="submit" name="btnEdit" value="Edit" />
+        }
+    </div>   
+
+    <div class="floating-spacer">
+    @Html.Partial("uc_customerEditor", Model.Customer)
+    </div>  
+</div>                    
+
+

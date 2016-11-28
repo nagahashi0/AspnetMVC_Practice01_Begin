@@ -1,0 +1,21 @@
+﻿<h1>Chapter 3</h1>
+
+<h2>Basic binding</h2>
+<a href="@Url.Action("repeat", "binding", new {text="ASP.NET MVC", number=3})">Repeat text</a>
+<br/>
+<a href="@Url.Action("repeatnull", "binding", new {text="ASP.NET MVC"})">Repeat text, no number specified</a>
+<br/>
+<a href="@Url.Action("repeatdefault", "binding", new {text="ASP.NET MVC"})">Repeat text (default value)</a>
+<br/>
+<a href="@Url.Content("~/Binding/RepeatWithPrecedence/test/10?text=Dino&number=2")">Repeat text (route precedence)</a>
+
+<h2>Complex binding</h2>
+<a href="@Url.Action("repeat", "complex", new {text="ASP.NET MVC", number=5})">Repeat text</a>
+<br/>
+<a href="@Url.Action("emails", "complex")">Listing emails</a>
+<br/>
+<a href="@Url.Action("countries", "complex")">Countries</a>
+
+<h2>Binders</h2>
+<a href="@Url.Action("editor", "date")">Date editor</a>
+<br/>

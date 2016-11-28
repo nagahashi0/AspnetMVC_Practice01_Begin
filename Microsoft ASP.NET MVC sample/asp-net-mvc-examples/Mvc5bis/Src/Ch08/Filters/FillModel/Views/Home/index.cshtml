@@ -1,0 +1,24 @@
+﻿@model FillModel.ViewModels.Home.IndexViewModel
+@{
+    // Set the title of the page
+    ViewBag.Title = Model.Title;
+}
+
+<h2>Pick up a country</h2>
+
+<fieldset>
+    <table cellspacing="0" cellpadding="10">
+        <tr>
+            <td valign="top">
+                @using(Html.BeginForm("Details", "Home"))
+                {
+                    @Html.DropDownList("countryList", new SelectList(Model.Countries))
+                    <input type="submit" name="btnMore" value="More" />
+                }
+            </td>
+            <td valign="top">
+ 
+            </td>
+        </tr>
+    </table>   
+</fieldset>

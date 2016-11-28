@@ -1,0 +1,20 @@
+﻿@using BookSamples.Components.Html
+
+<h1>Just images</h1>
+
+<table border="1">
+    <tr>
+        <th>Direct reference</th>
+        <th>Direct reference</th>
+        <th>Larger inline image</th>
+        <th>1-pixel inline image</th>
+        <th>Missing image via controller</th>
+    </tr>
+    <tr>
+        <td><img class="image" src="@Url.Content("~/content/images/germanshep.jpg")" alt="" /></td>
+        <td><img class="image" src="@Url.Content("~/content/images/square.jpg")" alt="" /></td>
+        <td><img class="image" src="@Url.InlineImage("~/content/images/square.jpg")" alt="" /></td>
+        <td><img class="image" src="@Url.InlineImage("~/content/images/onepixel.jpg")" alt="" /></td>
+        <td><img class="image" src="@Url.Content("~/image/download?img=~/content/images/notanimage.jpg")" alt="" /></td>
+    </tr>
+</table>

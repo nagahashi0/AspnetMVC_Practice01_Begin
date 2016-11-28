@@ -1,0 +1,24 @@
+﻿@using FatFree.Resources;
+@using FatFree.ViewModels.Home;
+
+
+@model IndexViewModel
+
+<h2>@Html.Raw(String.Format(Model.MessageFormat, Model.Today))</h2>
+
+<ul>
+@foreach (var fd in Model.FeaturedDates)
+{
+    var cssClass = (fd.DaysToGo <0 ?"emphasis-to" :"emphasis-since");
+    var distancer = (fd.DaysToGo < 0 ? "to" : "since");
+    <li>
+        <span class="@cssClass">@Math.Abs(fd.DaysToGo)</span> days 
+        <b>@distancer</b>
+        @fd.Description
+    </li>
+}
+</ul>
+
+<hr>
+    @Html.Raw(Strings.OurServices)
+

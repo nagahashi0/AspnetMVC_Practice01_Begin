@@ -1,0 +1,29 @@
+﻿@model BindingFun.ViewModels.Complex.EmailsViewModel 
+
+
+<h2>List your email address(es)</h2>
+
+@using (Html.BeginForm()) 
+{
+    foreach(var email in Model.Emails)
+    {
+        <input type="text" name="email" value="@email" />
+        <br />
+    }
+    <input type="submit" value="Send" />
+} 
+
+<hr />
+    
+<h2>Emails submitted</h2>
+<ul>
+@foreach (var email in Model.RegisteredEmails)
+{
+    if (String.IsNullOrWhiteSpace(email))
+    {
+        continue;
+    }
+
+    <li>@email</li>
+}
+</ul>

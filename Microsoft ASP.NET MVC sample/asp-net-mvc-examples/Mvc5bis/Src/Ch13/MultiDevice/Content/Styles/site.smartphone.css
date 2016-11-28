@@ -1,0 +1,82 @@
+.center {
+    text-align: center;
+}
+.picoftheday {
+    margin: 0px;
+    border: solid 1px #191919;
+    width: 100%;
+}
+.hotnews {
+    margin-top: -40px;
+    padding-left: 3px;
+    color: #ffa;
+    background: #222222;
+    opacity: 0.6;
+}
+.ellipsis 
+{
+    white-space: nowrap;    
+    overflow: hidden;    
+    text-overflow: ellipsis;
+    width: 280px;
+    margin: 0px;
+}  
+.readmore {
+    text-align: right; 
+    padding: 3px;
+}
+
+.menucontainer {
+    margin-top: -5px;
+    background: #880000;
+    padding: 5px;    
+}
+
+.menu 
+{
+    padding: 0px;
+    width: 100%;
+}
+
+.menub {
+    width: 75px;
+}
+
+.menub-large {
+    width: 82px;
+    text-align: center;
+    padding-left: 2px;
+}
+
+.bordered-t {
+    border-right: solid 1px #fff;
+    border-bottom: solid 1px #fff;
+    text-align: center;    
+}
+
+.bordered-d {
+    text-align: center;
+    border-right: solid 1px #fff;
+}
+
+.bordered-tr {
+    border-bottom: solid 1px #fff;
+    text-align: center;
+}
+.bordered-x {
+    text-align: center;
+}
+.footer {
+    background: #d51319;
+    padding: 5px;    
+}
+.about {
+    float: right;
+}
+.appstore {
+    padding: 5px;
+    width:180px;
+    float: left;
+    color: #fff;
+    text-shadow: 2px 2px 2px #222;   
+}

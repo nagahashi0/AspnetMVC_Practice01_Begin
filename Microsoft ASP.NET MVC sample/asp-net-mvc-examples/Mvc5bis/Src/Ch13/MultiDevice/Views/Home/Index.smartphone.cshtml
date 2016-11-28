@@ -1,0 +1,42 @@
+﻿@model MultiView2.ViewModels.Home.IndexViewModel
+
+@{
+    var picOfTheDay = String.Format("~/Content/Images/Pics/{0}", Model.ImageUrl);
+}
+
+<div class="center">
+    <img class="picoftheday" src="@Url.Content(picOfTheDay)" alt="" />
+</div>
+<div class="hotnews">
+    <table width="100%"><tr>
+        <td width="80%"><p class="ellipsis">@Model.HotNews</p></td>
+        <td width="20%" class="readmore"><img width="27px" src="@Url.Content("~/Content/Images/readmore_normal.png")" alt="" /></td>
+    </tr></table>
+    
+</div>
+<div class="menucontainer">
+    <table class="menu">
+    <tr>
+        <td class="bordered-t"><img class="menub" src="@Url.Content("~/Content/Images/rich/scores_normal.png")" /></td>
+        <td class="bordered-t"><img class="menub" src="@Url.Content("~/Content/Images/rich/oop_normal.png")" /></td>
+        <td class="bordered-t"><img class="menub" src="@Url.Content("~/Content/Images/rich/draws_normal.png")" /></td>
+        <td class="bordered-tr"><img class="menub" src="@Url.Content("~/Content/Images/rich/news_normal.png")" /></td>
+    </tr>
+    <tr>
+        <td class="bordered-d"><img class="menub" src="@Url.Content("~/Content/Images/rich/videos_normal.png")" /></td>
+        <td class="bordered-d"><img class="menub" src="@Url.Content("~/Content/Images/rich/fb_normal.png")" /></td>
+        <td class="bordered-d"><img class="menub" src="@Url.Content("~/Content/Images/rich/twitter_normal.png")" /></td>
+        <td><img class="menub-large" src="@Url.Content("~/Content/Images/rich/supertennis_normal.png")" /></td>
+    </tr>
+</table>
+</div>
+<div class="footer">
+    <div class="appstore">
+        <span style="text-wrap: normal;">@Model.GotoAppStoreLink</span>
+    </div>
+    <div class="about">
+        <img width="35px" src="@Url.Content("~/Content/Images/rich/about_normal.png")" alt="" />
+    </div>
+    <div style="clear: both">
+    </div>
+</div>

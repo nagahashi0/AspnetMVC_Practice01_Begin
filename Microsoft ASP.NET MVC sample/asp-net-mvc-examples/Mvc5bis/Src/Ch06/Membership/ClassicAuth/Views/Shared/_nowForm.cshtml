@@ -1,0 +1,23 @@
+﻿<script type="text/javascript">
+    function failed(xhr, textStatus, errorThrown) {
+        if (textStatus == "error") {
+            if (xhr.status === 401) {
+                $("#divOutput").html("You must be logged in.");
+            }
+        }
+    }
+</script>
+
+@*
+    You must add the script above and OnFailure and also use a modified version of AuthorizedOnly to solve the 
+    Remember-Me problem. With Authorize, you experience the problem but not solve it! Need a check on Ajax in it.
+*@
+
+<hr />
+ @using (Ajax.BeginForm("Now", "Home", new AjaxOptions { UpdateTargetId = "divOutput", OnFailure = "failed" }))
+ {
+     <input type="submit" value="What time is it?" />
+ }
+<hr />
+<div id="divOutput">
+</div>

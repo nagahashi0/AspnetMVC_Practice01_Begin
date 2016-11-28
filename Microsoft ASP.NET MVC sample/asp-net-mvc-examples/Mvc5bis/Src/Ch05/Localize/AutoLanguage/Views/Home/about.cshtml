@@ -1,0 +1,18 @@
+﻿@using AutoLanguage.Resources.Text
+@using BookSamples.Components.Html
+@using BookSamples.Components.Localization;
+
+
+<fieldset>
+    <legend>@Strings.LocalizedImageLabel</legend>
+    @Html.ImageOrDefault("img1", "~/content/images/welcome.jpg", defaultImageUrl: "~/content/images/missing.png", localizable: true)
+</fieldset>
+
+<table>
+<tr>
+<td><b>Culture</b></td><td>@Culture</td>
+<td><b>UI Culture</b></td><td>@UICulture</td>
+</tr>
+</table>
+
+@Html.Partial("_aboutdetails", localizable:true)

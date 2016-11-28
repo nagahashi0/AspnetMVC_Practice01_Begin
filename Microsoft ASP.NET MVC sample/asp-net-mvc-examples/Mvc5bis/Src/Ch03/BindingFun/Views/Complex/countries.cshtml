@@ -1,0 +1,36 @@
+﻿@model BindingFun.ViewModels.Complex.CountriesViewModel
+
+@using (Html.BeginForm()) 
+{
+    <h2>Select your favorite countries</h2>
+    var index = 0;
+    foreach (var country in Model.CountryList)
+    {
+        <fieldset>
+        <div> 
+            <b>Name</b><br />
+            <input type="text" name="country[@index].Name" value="@country.Name" /><br />
+            <b>Capital</b><br />
+            <input type="text" name="country[@index].Details.Capital" value="@country.Details.Capital" /><br />
+            <b>Continent</b><br />
+            @{
+                var id = String.Format("countries[{0}].Details.Continent", index++);
+             }
+             @Html.TextBox(id, country.Details.Continent)
+             <br />
+        </div>
+    </fieldset>
+    }
+
+    <input type="submit" value="Send" />
+} 
+
+    <hr />
+    
+    <h2>Countries submitted</h2>
+    <ul>
+    @foreach (var country in Model.SelectedCountries)
+    {
+        <li>@country.Name</li>
+    }
+    </ul>

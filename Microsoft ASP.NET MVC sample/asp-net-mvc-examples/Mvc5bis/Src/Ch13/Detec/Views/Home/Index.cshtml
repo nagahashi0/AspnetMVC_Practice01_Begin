@@ -1,0 +1,69 @@
+﻿@{
+    ViewBag.Title = "Detected by WURFL";
+    var hiliteIsDesktop = ViewBag.IsDesktop == "true" ? "hilite" : "";
+    var hiliteIsMobile = ViewBag.IsMobile == "true" ? "hilite" : "";
+    var hiliteIsTablet = ViewBag.IsTablet == "true" ? "hilite" : "";
+    var hiliteIsSmartTv = ViewBag.IsSmartTv == "true" ? "hilite" : "";
+    var hiliteIsPhone = ViewBag.IsPhone == "true" ? "hilite" : "";
+}
+
+<a style="text-decoration: none;color:#ddd;" href="http://wurfl.sourceforge.net">powered by WURFL</a>
+<h2>Dear device, you seem to be:</h2>
+<table cellspacing="0">
+    <tr>
+        <td class="label">Device</td>
+        <td class="value">@ViewBag.DeviceIdentity</td>
+    </tr>
+    <tr>
+        <td class="label">Model</td>
+        <td class="value">@ViewBag.DeviceModel</td>
+    </tr>
+    <tr>
+        <td class="label">OS</td>
+        <td class="value">@ViewBag.OperatingSystem</td>
+    </tr>
+    <tr>
+        <td class="label">Browser</td>
+        <td class="value">@ViewBag.BrowserName</td>
+    </tr>
+    <tr>
+        <td class="label">Screen</td>
+        <td class="value">@ViewBag.Resolution</td>
+    </tr>
+    <tr>
+        <td class="label sep">Desktop</td>
+        <td class="value sep @hiliteIsDesktop">@ViewBag.IsDesktop</td>
+    </tr>
+    <tr>
+        <td class="label">Mobile</td>
+        <td class="value @hiliteIsMobile">@ViewBag.IsMobile</td>
+    </tr>
+    <tr>
+        <td class="label">Tablet</td>
+        <td class="value @hiliteIsTablet">@ViewBag.IsTablet</td>
+    </tr>
+    <tr>
+        <td class="label">Smart TV</td>
+        <td class="value @hiliteIsSmartTv">@ViewBag.IsSmartTv</td>
+    </tr>
+    <tr>
+        <td class="label">Phone</td>
+        <td class="value @hiliteIsPhone">@ViewBag.IsPhone</td>
+    </tr>
+    <tr>
+        <td class="label sep">Support SMS</td>
+        <td class="value sep">@ViewBag.Sms</td>
+    </tr>
+    <tr>
+        <td class="label">Has SIM</td>
+        <td class="value">@ViewBag.CanHaveSim</td>
+    </tr>
+    <tr>
+        <td class="label">Streaming</td>
+        <td class="value">@ViewBag.SupportedVideoStreaming</td>
+    </tr>
+    <tr>
+        <td class="label">NFC</td>
+        <td class="value">@ViewBag.NfcSupport</td>
+    </tr>
+</table>

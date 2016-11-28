@@ -1,0 +1,54 @@
+﻿
+@* Date helper to render out a date as three side-by-side text boxes *@
+@helper InputDate(String name, DateTime? theDate)
+{
+    String day="", month="", year="";
+    if(theDate.HasValue)
+    {
+        day = theDate.Value.Day.ToString();
+        month = theDate.Value.Month.ToString();
+        year = theDate.Value.Year.ToString();
+    }
+    <table>
+        <thead>
+            <th>DD</th>
+            <th>MM</th>
+            <th>YYYY</th>
+        </thead>
+        <tr>
+            <td><input type="number" name="@(name + ".day")" value="@day" style="width:30px" /></td>
+            <td><input type="number" name="@(name + ".month")" value="@month" style="width:30px" /></td>
+            <td><input type="number" name="@(name + ".year")" value="@year" style="width:40px" /></td>
+        </tr>
+    </table>
+}
+
+@* Helper to render out the distance between today and specified date. *@
+@helper Distance(TimeSpan? distance)
+{
+    if (distance == null || !distance.HasValue)
+    {
+        return;
+    }
+
+    const String futureDays = "It will be in {0} days";
+    const String pastDays = "It was {0} days ago";
+    const String today = "It is today";
+
+    var text = "";
+    if (distance.Value.TotalDays <0)
+    {
+        text = String.Format(futureDays, -1 *distance.Value.TotalDays);
+    }
+    if (distance.Value.TotalDays > 0)
+    {
+        text = String.Format(pastDays, distance.Value.TotalDays);
+    }
+    
+    if ((Int32)(distance.Value.TotalDays) == 0)
+    {
+        text = today;
+    }
+    
+    <p>@text</p>
+}

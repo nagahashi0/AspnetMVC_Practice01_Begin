@@ -1,0 +1,17 @@
+﻿@model DataAnnotations.ViewModels.Memo.MemoDocument
+@{
+    Layout = "";
+}
+        
+@using (Ajax.BeginForm("edit", "memo", new AjaxOptions() { UpdateTargetId="memoEditor" }))
+{
+    <div id="memoEditor">
+    <fieldset>        
+        <legend>Memo</legend>               
+        @Html.EditorForModel()
+        <p>            
+        <input type="submit" value="Create" />        
+        </p>    
+    </fieldset>    
+    </div>                                                                                                                                                                                                               
+}

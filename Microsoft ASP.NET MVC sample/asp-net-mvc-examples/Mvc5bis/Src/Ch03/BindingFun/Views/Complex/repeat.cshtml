@@ -1,0 +1,11 @@
+﻿@model BindingFun.ViewModels.Complex.RepeatViewModel
+
+
+<h2>Repeating text a given number of times...</h2>
+
+<ul>
+@for (var i = 0; i < Model.Number; i++)
+{
+    <li>@Model.Text</li>
+}
+</ul>

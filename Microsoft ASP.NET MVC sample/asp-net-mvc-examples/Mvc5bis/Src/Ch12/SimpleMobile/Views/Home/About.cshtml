@@ -1,0 +1,21 @@
+﻿@{
+    ViewBag.Title = "About";
+}
+
+<h2>About</h2>
+<fieldset class="ui-grid-b">
+   <div class="ui-block-a"> First block </div>
+   <div class="ui-block-b"> Second block </div>	   
+   <div class="ui-block-c"> Third block </div>	
+</fieldset>
+
+<div data-role="collapsible" data-theme="a" data-collapsed="true" data-content-theme="e">
+     <h3>See navigation options</h3>
+     <div>
+         <ul data-role="listview" data-inset="true" data-theme="c" data-dividertheme="a">
+             <li>@Html.ActionLink("Home", "Index", "Home")</li>
+             <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+         </ul>
+     </div>
+</div>
+

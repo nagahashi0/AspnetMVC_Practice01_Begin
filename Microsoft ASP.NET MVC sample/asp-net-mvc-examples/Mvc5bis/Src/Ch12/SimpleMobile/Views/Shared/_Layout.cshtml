@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>@ViewBag.Title</title>
+        <meta name="viewport" content="width=device-width" />
+        <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+        @Styles.Render("~/content/css")
+    </head>
+    <body>
+        <div data-role="page" data-theme="b">
+            <div data-role="header">
+                <h1>@ViewBag.Title</h1>
+                @Html.Partial("_LoginPartial")
+            </div>
+            <div data-role="content">
+                @RenderBody()
+            </div>
+            <div data-role="footer" data-theme="d" data-position="fixed">
+                To learn more about this book visit <a href="http://www.microsoft.com/learning">MS Press site</a>.
+            </div>
+        </div>       
+
+        @Scripts.Render("~/content/script")
+        @RenderSection("scripts", required: false)
+    </body>
+</html>

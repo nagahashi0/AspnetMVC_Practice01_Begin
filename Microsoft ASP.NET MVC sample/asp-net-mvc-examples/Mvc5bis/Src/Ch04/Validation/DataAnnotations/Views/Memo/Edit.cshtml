@@ -1,0 +1,16 @@
+﻿@model DataAnnotations.ViewModels.Memo.MemoDocument
+
+@using (Html.BeginForm("edit", "memo")) 
+{
+    <div id="memoEditor">
+        <fieldset>        
+            <legend>Memo</legend>               
+            @Html.EditorForModel()
+            <p>            
+                <input type="submit" value="Create" />        
+            </p>    
+        </fieldset>    
+        <hr />
+        @*@Html.ValidationSummary()*@
+    </div>                                                                                                                                                                                                               
+}

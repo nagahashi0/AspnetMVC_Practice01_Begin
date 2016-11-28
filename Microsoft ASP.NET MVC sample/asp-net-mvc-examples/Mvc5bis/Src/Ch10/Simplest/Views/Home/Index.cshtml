@@ -1,0 +1,62 @@
+﻿<h1>Web API DEMO (JS)</h1>
+
+<script type="text/javascript">
+    function News(title) {
+        this.title = title;
+    }
+    function NewsViewModel(listOfNews) {
+        this.allNews = listOfNews;
+    }
+</script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        getNews(function (listOfNews) {
+            ko.applyBindings(new NewsViewModel(listOfNews));
+        });
+    });
+
+    // contentType indicates the format of the request's body; NOT what's being accepted from the server
+    function getNews(callback) {
+        $.ajax({
+            cache: false,
+            url: "/api/news/all?count=5",
+            type: "GET",
+            headers: { Accept : "application/json; charset=utf-8" }, 
+            //headers: { Accept: "text/xml; charset=utf-8" },
+            statusCode: {
+                200: function (listOfNews) { callback(listOfNews); },
+                404: function () { alert("No news found!"); }
+            }
+        });
+    }
+</script>
+<script type="text/javascript">
+    function getXmlNews() {
+        $.ajax({
+            url: "/api/news/all?count=5",
+            type: "GET",
+            headers: { Accept: "text/xml; charset=utf-8" },
+            statusCode: {
+                200: function (listOfNews) { alert(listOfNews); },
+                404: function () { alert("No news found!"); }
+            }
+        });
+    }       
+</script>
+
+<div id="news-container">
+
+    <h2>Late breaking tennis news  ::  <a href="javascript:getXmlNews()">XML version</a></h2>
+
+    <table>
+        <thead><tr>
+            <th>Title</th>
+        </tr></thead>
+        <tbody data-bind="foreach: allNews">
+            <tr>
+                <td data-bind="text: title"></td>
+            </tr>    
+        </tbody>
+    </table>
+
+</div>

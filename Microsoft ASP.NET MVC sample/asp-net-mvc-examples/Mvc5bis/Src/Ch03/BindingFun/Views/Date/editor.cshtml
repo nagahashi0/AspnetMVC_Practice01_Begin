@@ -1,0 +1,16 @@
+﻿@model BindingFun.ViewModels.Date.EditorViewModel
+
+@using (Html.BeginForm())
+{
+<fieldset>
+    <legend>Date Editor</legend>
+    <div style="margin:20px">
+        <table><tr>
+        <td>@DateHelpers.InputDate("theDate", Model.DefaultDate)</td>
+        <td><input type="submit" value="Find out more" /></td>
+        </tr></table>
+    </div>
+</fieldset>
+}
+<hr />
+@DateHelpers.Distance(Model.TimeToToday)
