@@ -37,12 +37,15 @@ namespace Practice01_Begin.Controllers
             return View();
         }
 
-        public ActionResult Greeting()
-        {
-            Models.GreetingModels grt = new Models.GreetingModels();
-            grt.Message = "Hello World";
+        //・・・前回までのコードは省略
 
-            return View(grt);
+        public ActionResult ShowModel()
+        {
+            //HelloViewModelオブジェクトを作成し初期値を設定する
+            Models.HelloViewModel mdl = new Models.HelloViewModel();
+            mdl.Message = "Hello World";
+            //モデルを指定してビューを表示する
+            return View(mdl);
 
         }
     }
