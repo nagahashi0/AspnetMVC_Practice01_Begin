@@ -196,7 +196,6 @@ E:\Work\AspnetMVC\Practice01_Begin\Practice01_Begin\bin\ja\Microsoft.Owin.Securi
 E:\Work\AspnetMVC\Practice01_Begin\Practice01_Begin\bin\ja\Microsoft.Owin.Security.Google.resources.dll
 E:\Work\AspnetMVC\Practice01_Begin\Practice01_Begin\bin\ja\Microsoft.Owin.Security.Twitter.resources.dll
 E:\Work\AspnetMVC\Practice01_Begin\Practice01_Begin\bin\ja\Microsoft.Owin.Security.MicrosoftAccount.resources.dll
-E:\Work\AspnetMVC\Practice01_Begin\Practice01_Begin\obj\Debug\Practice01_Begin.csprojResolveAssemblyReference.cache
 E:\Work\AspnetMVC\Practice01_Begin\Practice01_Begin\obj\Debug\Practice01_Begin.dll
 E:\Work\AspnetMVC\Practice01_Begin\Practice01_Begin\obj\Debug\Practice01_Begin.pdb
 E:\Work\AspnetMVC\Practice01_Begin\bin\ApplicationInsights.config
@@ -300,3 +299,4 @@ E:\Work\AspnetMVC\Practice01_Begin\bin\ja\Microsoft.Owin.Security.MicrosoftAccou
 E:\Work\AspnetMVC\Practice01_Begin\obj\Debug\Practice01_Begin.csprojResolveAssemblyReference.cache
 E:\Work\AspnetMVC\Practice01_Begin\obj\Debug\Practice01_Begin.dll
 E:\Work\AspnetMVC\Practice01_Begin\obj\Debug\Practice01_Begin.pdb
+E:\Work\AspnetMVC\Practice01_Begin\Practice01_Begin\obj\Debug\Practice01_Begin.csprojResolveAssemblyReference.cache

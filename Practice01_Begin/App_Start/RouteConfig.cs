@@ -13,17 +13,32 @@ namespace Practice01_Begin
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
-            //デフォルトルート
-            routes.MapRoute(
-                name: "Default",
-                url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
-            );
+            
             //Greetingルート
             routes.MapRoute(
                 name: "Greeting",
                 url: "Greeting/Show",
                 defaults: new { controller = "Hello", action = "ShowHelloMessage" }
+            );
+
+            //HtmlHelperルート
+            routes.MapRoute(
+                name: "HtmlHelper",
+                url: "helper/{controller}/{action}/{id}",
+                defaults: new { controller = "HtmlHelper", action = "Index2", id = UrlParameter.Optional }
+            );
+
+            //HtmlHelperルート
+            routes.MapRoute(
+                name: "HtmlHelperSample",
+                url: "helper/sample/{controller}/{action}/{id}",
+                defaults: new { controller = "HtmlHelperSample", action = "Edit", id = UrlParameter.Optional }
+            );
+            //デフォルトルート
+            routes.MapRoute(
+                name: "Default",
+                url: "{controller}/{action}/{id}",
+                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
             );
 
         }

@@ -1,0 +1,300 @@
+﻿@model Practice01_Begin.Models.HtmlHelperViewModels
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+    <h3>BeginForm, EndForm</h3>
+    @{
+        //アクション名
+        string actionName = "Edit";
+        //コントローラー名
+        string controllerName = "HtmlHelper";
+        //ルートパラメータ
+        object routeValues = new { id = "1", otherParam = "xxx" };
+        //HTTPメソッド（GET/POST)
+        FormMethod frmMethod = FormMethod.Post;
+    }
+
+    @using (Html.BeginForm(actionName, controllerName, routeValues, frmMethod))
+    {
+        <input type="submit" value="送信" />
+    }
+    <h3>BeginRouteForm</h3>
+
+    @using (Html.BeginRouteForm("HtmlHelperSample"))
+    {
+        <input type="submit" value="送信" />
+    }
+
+    @{
+        //ルート名
+        string routeName2 = "HtmlHelperSample";
+        //ルートパラメータ
+        object routeValues2 = new
+        {
+            Controller = "HtmlHelperSample",
+            Action = "Edit",
+            id = 1,
+            otherParam = "xxx"
+        };
+        //HTTPメソッド（GET/POST)
+        FormMethod frmMethod2 = FormMethod.Post;
+    }
+
+    @using (Html.BeginRouteForm(routeName2, routeValues2, frmMethod2))
+    {
+        <input type="submit" value="送信" />
+    }
+
+    <h3>Label、LabelFor</h3>
+    <div>
+        Label:
+        @Html.Label("LabelText")
+    </div>
+    <div>
+        LabelFor:
+        @Html.LabelFor(model => model.LabelText)
+    </div>
+    <div>
+        Label:
+        @Html.Label(Model.LabelText)
+    </div>
+
+    <h3>TextBox、TextBoxFor</h3>
+    <div>
+        TextBox:
+        @Html.TextBox("TextBoxID", "TextBoxValue", new { @readonly = "readonly", size = "20", maxlength = 40 })
+    </div>
+    <div>
+        TextBoxFor:
+        @Html.TextBoxFor(model => model.TextBoxText, new { @readonly = "readonly", size = "20", maxlength = 40 })
+    </div>
+
+    <h3>TextArea、TextAreaFor</h3>
+    <div>
+        TextArea:
+        @Html.TextArea("TextAreaID",                    //要素名
+                        "TextAreaValue",                //値
+                        5,                              //行数
+                        50,                             //桁数
+                        new { @class = "multiline" }    //属性
+                        )
+    </div>
+    <div>
+        TextAreaFor:
+        @Html.TextAreaFor(mdl => mdl.TextAreaText, 5, 50, new { @class = "multiline" })
+    </div>
+
+    <h3>Password、PasswordFor</h3>
+    <div>
+        Password:
+        @Html.Password("PasswordID", "PasswordText", new { size = 10, maxlength = 20 })
+    </div>
+    <div>
+        PasswordFor:
+        @Html.PasswordFor(mdl => mdl.PasswordText, new { size = 10, maxlength = 20 })
+
+        @Html.PasswordFor(mdl => mdl.PasswordText, new { size = 10, maxlength = 20, value = Model.PasswordText })
+    </div>
+
+    <h3>Hidden、HiddenFor</h3>
+    <div>
+        Hidden:
+        @Html.Hidden("HiddenID", "HiddenValue")
+    </div>
+    <div>
+        HiddenFor:
+        @Html.HiddenFor(mdl => mdl.HiddenValue)
+    </div>
+
+    <h3>RadioButton、RadioButtonFor</h3>
+    <div>
+        RadioButton:
+        <label>@Html.RadioButton("RadioButtonID", "RadioValueA", false) RadioA</label>
+        <label>@Html.RadioButton("RadioButtonID", "RadioValueB", true) RadioB</label>
+    </div>
+    <div>
+        RadioButtonFor:
+        <label>@Html.RadioButtonFor(mdl => mdl.RadioValue, "RadioValueA") RadioA</label>
+        <label>@Html.RadioButtonFor(mdl => mdl.RadioValue, "RadioValueB") RadioB</label>
+    </div>
+
+    <label>@Html.RadioButton("RadioButtonID", "RadioValueA", false, new { id = "radioButtonId_A" }) RadioA</label>
+    <label>@Html.RadioButtonFor(mdl => mdl.RadioValue, "RadioValueA", new { id = "radioButtonId_A" }) RadioA</label>
+
+
+    <h3>CheckBox、CheckBoxFor</h3>
+    <div>
+        CheckBox:
+        <label>@Html.CheckBox("CheckBoxID_A", true) CheckA</label>
+        <label>@Html.CheckBox("CheckBoxID_B", true) CheckB</label>
+        <label>@Html.CheckBox("CheckBoxID_C", false) CheckC</label>
+    </div>
+    <div>
+        CheckBoxFor:
+        <label>@Html.CheckBoxFor(mdl => mdl.CheckBoxValueA) CheckA</label>
+        <label>@Html.CheckBoxFor(mdl => mdl.CheckBoxValueB) CheckB</label>
+        <label>@Html.CheckBoxFor(mdl => mdl.CheckBoxValueC) CheckC</label>
+    </div>
+
+    <h3>DropDownList/ DropDownListFor</h3>
+    <div>
+        DropDownList(selectListitem):
+        @{
+            var items1 = new List<SelectListItem>()
+                {
+                    new SelectListItem() {Value = "1", Text = "日曜日" },
+                    new SelectListItem() {Value = "2", Text = "月曜日" },
+                    new SelectListItem() {Value = "3", Text = "火曜日" , Selected = true},
+                    new SelectListItem() {Value = "4", Text = "水曜日" },
+                    new SelectListItem() {Value = "5", Text = "木曜日" },
+                    new SelectListItem() {Value = "6", Text = "金曜日" },
+                    new SelectListItem() {Value = "7", Text = "土曜日" },
+                };
+        }
+        @Html.DropDownList("DropDownListID", items1)
+    </div>
+    <div>
+        DropDownList(SelectList):
+        @{
+            var items2 = new List<KeyValuePair<string, string>>()
+                {
+                    new KeyValuePair<string,string>("1", "日曜日"),
+                    new KeyValuePair<string,string>("2", "月曜日"),
+                    new KeyValuePair<string,string>("3", "火曜日"),
+                    new KeyValuePair<string,string>("4", "水曜日"),
+                    new KeyValuePair<string,string>("5", "木曜日"),
+                    new KeyValuePair<string,string>("6", "金曜日"),
+                    new KeyValuePair<string,string>("7", "土曜日"),
+                };
+
+            var list2 = new SelectList(items2,    //選択肢リスト
+                                "Key",          //Value値に指定するプロパティ名
+                                "Value",        //Text値に指定するプロパティ名
+                                "4");           //選択値
+
+        }
+        @Html.DropDownList("DropDownListID", list2)
+    </div>
+    <div>
+        @{
+            var items3 = new List<SelectListItem>()
+                {
+                    new SelectListItem() {Value = "1", Text = "日曜日" },
+                    new SelectListItem() {Value = "2", Text = "月曜日" },
+                    new SelectListItem() {Value = "3", Text = "火曜日" },
+                    new SelectListItem() {Value = "4", Text = "水曜日" },
+                    new SelectListItem() {Value = "5", Text = "木曜日" },
+                    new SelectListItem() {Value = "6", Text = "金曜日" },
+                    new SelectListItem() {Value = "7", Text = "土曜日" },
+                };
+        }
+        DropDownListFor:
+        @Html.DropDownListFor(mdl => mdl.DropDownValue, items3)
+    </div>
+    <div>
+    @{
+        var items4 = new List<KeyValuePair<string, string>>()
+                {
+                    new KeyValuePair<string,string>("1", "日曜日"),
+                    new KeyValuePair<string,string>("2", "月曜日"),
+                    new KeyValuePair<string,string>("3", "火曜日"),
+                    new KeyValuePair<string,string>("4", "水曜日"),
+                    new KeyValuePair<string,string>("5", "木曜日"),
+                    new KeyValuePair<string,string>("6", "金曜日"),
+                    new KeyValuePair<string,string>("7", "土曜日"),
+                };
+
+        var list4 = new SelectList(items4, "Key","Value");
+    }
+    @Html.DropDownListFor(mdl => mdl.DropDownValue, list4)
+    </div>
+
+    <h3>ListBox/ ListBoxFor</h3>
+    <div>
+        @{
+            var items5 = new List<SelectListItem>()
+                {
+                    new SelectListItem() {Value = "1", Text = "日曜日" },
+                    new SelectListItem() {Value = "2", Text = "月曜日" },
+                    new SelectListItem() {Value = "3", Text = "火曜日" , Selected = true},
+                    new SelectListItem() {Value = "4", Text = "水曜日" },
+                    new SelectListItem() {Value = "5", Text = "木曜日" },
+                    new SelectListItem() {Value = "6", Text = "金曜日" },
+                    new SelectListItem() {Value = "7", Text = "土曜日" , Selected = true},
+                };
+        }
+        ListBox(SelectListItem):
+        @Html.ListBox("ListBoxID", items5)
+    </div>
+    <div>
+        @{
+            var items6 = new List<KeyValuePair<string, string>>()
+                {
+                    new KeyValuePair<string,string>("1", "日曜日"),
+                    new KeyValuePair<string,string>("2", "月曜日"),
+                    new KeyValuePair<string,string>("3", "火曜日"),
+                    new KeyValuePair<string,string>("4", "水曜日"),
+                    new KeyValuePair<string,string>("5", "木曜日"),
+                    new KeyValuePair<string,string>("6", "金曜日"),
+                    new KeyValuePair<string,string>("7", "土曜日"),
+                };
+            var selectedItems = new String[] { "3", "6" };
+
+            var list6= new MultiSelectList (items6, "Key", "Value", selectedItems);
+        }
+        ListBox(SelectList):
+        @Html.ListBox("ListBoxID", list6)
+    </div>
+    <div>
+        @{
+            var items7 = new List<SelectListItem>()
+                {
+                    new SelectListItem() {Value = "1", Text = "日曜日" },
+                    new SelectListItem() {Value = "2", Text = "月曜日" },
+                    new SelectListItem() {Value = "3", Text = "火曜日" },
+                    new SelectListItem() {Value = "4", Text = "水曜日" },
+                    new SelectListItem() {Value = "5", Text = "木曜日" },
+                    new SelectListItem() {Value = "6", Text = "金曜日" },
+                    new SelectListItem() {Value = "7", Text = "土曜日" },
+                };
+        }
+        ListBoxFor(SelectListItem):
+        @Html.ListBoxFor(mdl => mdl.ListBoxValues, items7)
+    </div>
+    <div>
+        @{
+            var items8 = new List<KeyValuePair<string, string>>()
+                {
+                    new KeyValuePair<string,string>("1", "日曜日"),
+                    new KeyValuePair<string,string>("2", "月曜日"),
+                    new KeyValuePair<string,string>("3", "火曜日"),
+                    new KeyValuePair<string,string>("4", "水曜日"),
+                    new KeyValuePair<string,string>("5", "木曜日"),
+                    new KeyValuePair<string,string>("6", "金曜日"),
+                    new KeyValuePair<string,string>("7", "土曜日"),
+                };
+            var selectedItems8 = new String[] { "3", "6" };
+            var list8 = new MultiSelectList(items8, "Key", "Value", selectedItems8);
+        }
+        ListBoxFor(SelectList):
+        @Html.ListBoxFor(mdl => mdl.ListBoxValues , list8)
+    </div>
+
+<div>
+    
+    EnumDropDownListFor:
+    @Html.EnumDropDownListFor(mdl => mdl.EnumValue)
+
+    @{
+        IList<SelectListItem> enumList = EnumHelper.GetSelectList(typeof(Practice01_Begin.Models.WeekdayType));
+    }
+    @Html.DropDownList("EnumDropDownListID", new SelectList(enumList, "Value", "Text", "2"))
+
+    <div style="margin-top:30px:">
+        @Html.DropDownListFor(mdl => mdl.DropDownValue, enumList)
+    </div>
+</div>

@@ -1,0 +1,183 @@
+﻿@model Practice01_Begin.Models.RazorShowViewModel
+
+
+@{
+    ViewBag.Title = "Show";
+}
+
+<h2>Show</h2>
+
+
+<h3>コードナゲット(インライン式)</h3>
+<p>@Model.Message</p>
+
+
+<h3>明示的コードナゲット</h3>
+<p>@(Model.UserName)さん</p> 
+
+<p>@Model.Price * 1.08</p>
+
+<p>@(Model.Price * 1.08)</p>
+
+<h3>「@@」をエスケープ</h3>
+<p>@@Model.UserNameはモデルのプロパティです。</p>
+
+<h3>コードブロック</h3>
+@{
+    String msg = "Hello World";
+}
+<p>@msg</p>
+
+<h3>コードブロックで静的コンテンツを出力する～パターン1～</h3>
+@{ 
+    String ptn1 = "パターン１";
+    <p>htmlタグで囲んで： @ptn1</p>
+}
+
+<h3>コードブロックで静的コンテンツを出力する～パターン2～</h3>
+@{ 
+    String ptn2 = "パターン２";
+
+    @: 単一行の出力　：　@ptn2
+}
+
+<h3>コードブロックで静的コンテンツを出力する～パターン3～</h3>
+@{
+    String ptn3 = "パターン３";
+
+    <text>
+        複数行で出力するなら
+        @ptn3
+    </text>
+
+}
+
+<h3>コードブロック内はC#コードが書ける</h3>
+@{
+    //コメント     
+    int number = new System.Random().Next(1, 10);
+    if (number % 2 == 0)
+    {
+        @:number[@number]は偶数
+    }
+    else
+    {
+        @:number[@number]は奇数
+    }
+}
+
+<h3>Razorコメント</h3>
+@*
+    ここからはコメントです。
+
+    @Model.Message
+
+    @{
+        int number = new System.Random().Next(1, 10);
+    }
+    ここまではコメントです。
+*@
+
+
+
+<h3>「@@using」で名前空間をインポート</h3>
+@using Practice01_Begin.MyExtensions;
+
+@{ 
+    bool ret1 = string.Empty.MyExtensionMethod();
+}
+
+<h3>「@@if」で条件分岐</h3>
+
+@{ int num = new System.Random().Next(1, 10); }
+
+@if (num % 2 == 0)
+{
+    @:偶数
+}
+else
+{
+    @:奇数
+}
+
+<h3>「@@switch」で条件分岐</h3>
+@switch (num)
+{
+    case 2:
+        @: numは2です。
+        break;
+    default:
+        @: numは2以外です。
+        break;
+}
+<h3>「@@for」で繰り返し処理</h3>
+@{ int max = 10; }
+@for (int i = 0; i < max; i++)
+{
+    <p>@i</p>
+}
+
+<h3>「@@foreach」で繰り返し処理</h3>
+@{ int[] nums = { 2, 4, 6 }; } 
+@foreach (int val in nums)
+{
+    <p>@val</p>
+}
+
+<h3>「@@while」での繰り返し処理</h3>
+@{ int counter = 1; }
+@while (counter < 10)
+{
+    <p>@counter</p>
+    counter++;
+}
+
+<h3>「@@functions」でメソッドやプロパティを定義</h3>
+@functions
+{
+    // メソッド定義
+    bool isEven(int num)
+    {
+        bool ret = false;
+        if (num % 2 == 0)
+        {
+            ret = true;
+        }
+        return ret;
+    }
+    //プロパティ定義
+    string _str = "Hello";
+    String Str
+    {
+        get { return _str + " World"; }
+        set { _str = value; }
+    }
+}
+<p>8は偶数：@isEven(8)</p>
+<p>プロパティの値：@_str / @Str</p>
+
+<p>コードブロック内では匿名関数で</p>
+@{ 
+    Func<int, bool> isOdd = (val) =>
+    {
+        bool ret = false;
+        if (num % 2 != 0)
+        {
+            ret = true;
+        }
+        return ret;
+    };
+
+}
+<p>8は奇数：@isOdd(8)</p>
+
+<h3>条件付きナゲット</h3>
+@{ string styleRed = "color:red"; }
+<p style=@styleRed>style = color:red</p>
+
+@{ string styleNull = null; }
+<p style=@styleNull>style = null</p>
+
+@{ bool hidden = true; }
+
+<p style
