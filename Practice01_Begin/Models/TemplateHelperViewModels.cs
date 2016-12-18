@@ -21,34 +21,71 @@ namespace Practice01_Begin.Models
 
     }
 
+    public enum WeweathereType
+    {
+        [Display(Name = "晴れ")]
+        sunny,
+        [Display(Name = "曇")]
+        cloudy,
+        [Display(Name = "雨")]
+        rainy
+    }
+   
     public class DisplayForViewModel
     {
+        [Display(Name ="String型")]
+        public string StringValue { get; set; }
 
+        [Display(Name = "int型")]
+        public int IntValue { get; set; }
+
+        [Display(Name = "long型")]
+        public long LongValue { get; set; }
+
+        [Display(Name = "decimal型")]
+        public decimal DecimalValue { get; set; }
+
+        [Display(Name = "DateTime型")]
+        public DateTime DateTimeValue { get; set; }
+
+        [Display(Name = "bool型")]
         public bool BoolValue { get; set; }
 
+        [Display(Name = "bool(Nullable)型")]
         public bool? NullableBoolValue { get; set; }
 
-        [DataType(DataType.EmailAddress)]
-        public string EmailValue { get; set; }
+        [Display(Name = "enum型")]
+        public WeweathereType EnumValue { get; set; }  
+    }
 
-        [DataType(DataType.Url)]
-        public string UrluelValue { get; set; }
+    public class AttributeModel
+    {
+        [Display(Name = "int型(DataType.Text")]
+        [DataType(DataType.Text)]
+        public int IntValue { get; set; }
 
+        [Display(Name = "string型(DataType.Html")]
         [DataType(DataType.Html)]
-        public string HtmlValue { get; set; }
+        public string StringValue { get; set; }
 
-        [DataType(DataType.CreditCard )]
-        [DataType(DataType.Currency )]
-        [DataType(DataType.Date )]
-        [DataType(DataType.Duration )]
-        [DataType(DataType.ImageUrl )]
-        [DataType(DataType.MultilineText )]
-        [DataType(DataType.Password )]
-        [DataType(DataType.PhoneNumber )]
-        [DataType(DataType.PostalCode )]
-        [DataType(DataType.Text )]
-        [DataType(DataType.Time )]
-        [DataType(DataType.Upload )]
-        [DataType(DataType.Url)]
+    }
+
+
+    public class MyClass
+    {
+        public string Name { get; set; }
+        public int Age { get; set; }
+    }
+    public class HelperViewModel
+    {
+        [Display(Name = "クラス型")]
+        public MyClass MyClassValue { get; set; }
+        
+        [Display(Name = "string型のList")]
+        public List<string> StringList { get; set; }
+
+        [Display(Name = "MyClass型のList")]
+        public List<MyClass> MyClassList { get; set; }
+
     }
 }

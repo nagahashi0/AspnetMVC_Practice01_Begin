@@ -192,7 +192,7 @@
   <ItemGroup>
     <Compile Include="Controllers\HtmlHelperController.cs" />
     <Compile Include="Controllers\HtmlHelperSampleController.cs" />
-    <Compile Include="Controllers\TenplateHelperController.cs" />
+    <Compile Include="Controllers\TemplateHelperController.cs" />
     <Compile Include="Models\HtmlHelperViewModels.cs" />
     <Compile Include="Models\TemplateHelperViewModels.cs" />
     <Compile Include="MyExtensions\StringExtensions.cs" />
@@ -279,7 +279,10 @@
     <Content Include="Views\Hello\ShowModel.cshtml" />
     <Content Include="Views\Razor\Show.cshtml" />
     <Content Include="Views\HtmlHelper\Index.cshtml" />
-    <Content Include="Views\TenplateHelper\Index.cshtml" />
+    <Content Include="Views\TemplateHelper\Index.cshtml" />
+    <Content Include="Views\TemplateHelper\DisplayForAction.cshtml" />
+    <Content Include="Views\TemplateHelper\HelperAction.cshtml" />
+    <Content Include="Views\TemplateHelper\AttributeAction.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
