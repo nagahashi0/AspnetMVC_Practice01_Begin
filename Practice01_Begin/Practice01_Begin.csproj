@@ -190,9 +190,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\DisplayColumnController.cs" />
     <Compile Include="Controllers\HtmlHelperController.cs" />
     <Compile Include="Controllers\HtmlHelperSampleController.cs" />
+    <Compile Include="Controllers\ModelBindController.cs" />
     <Compile Include="Controllers\TemplateHelperController.cs" />
+    <Compile Include="Models\DisplayColumnViewModels.cs" />
     <Compile Include="Models\HtmlHelperViewModels.cs" />
     <Compile Include="Models\TemplateHelperViewModels.cs" />
     <Compile Include="MyExtensions\StringExtensions.cs" />
@@ -216,6 +219,7 @@
     <Compile Include="Models\RazorViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="Views\ModelBindViewModels.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
@@ -283,6 +287,8 @@
     <Content Include="Views\TemplateHelper\DisplayForAction.cshtml" />
     <Content Include="Views\TemplateHelper\HelperAction.cshtml" />
     <Content Include="Views\TemplateHelper\AttributeAction.cshtml" />
+    <Content Include="Views\DisplayColumn\Index.cshtml" />
+    <Content Include="Views\ModelBind\Show.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

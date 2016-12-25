@@ -1,0 +1,25 @@
+﻿
+@using (Html.BeginForm("SimpleBind", "ModelBind"))
+{
+    <dl>
+        <dt>@Html.Label("String値：")</dt>
+        <dd>@Html.TextBox("StringValue")</dd>
+    </dl>
+    <div>
+        <input type="submit" value="送信" />
+    </div>
+
+}
+
+@using (Html.BeginForm("SimpleBind2", "ModelBind"))
+{
+    <dl>
+        <dt>@Html.Label("int値：")</dt>
+        <dd>@Html.TextBox("IntValue")</dd>
+    </dl>
+    <div>
+        <input type="submit" value="送信" />
+    </div>
+
+}
+

@@ -60,14 +60,66 @@ namespace Practice01_Begin.Models
 
     public class AttributeModel
     {
-        [Display(Name = "int型(DataType.Text")]
+        [Display(Name = "int型(DataType.Text)")]
         [DataType(DataType.Text)]
         public int IntValue { get; set; }
 
-        [Display(Name = "string型(DataType.Html")]
+        [Display(Name = "string型(DataType.Html)")]
         [DataType(DataType.Html)]
-        public string StringValue { get; set; }
+        public string HtmlValue { get; set; }
 
+        [Display(Name = "string型(DataType.MultilineText)")]
+        [DataType(DataType.MultilineText)]
+        public string MultilineTextValue { get; set; }
+
+        [Display(Name = "string型(DataType.EmailAddress)")]
+        [DataType(DataType.EmailAddress)]
+        public string EmailAddressValue { get; set; }
+
+        [Display(Name = "string型(DataType.Url)")]
+        [DataType(DataType.Url)]
+        public string UrlValue { get; set; }
+
+        [Display(Name = "string型(DataType.Password)")]
+        [DataType(DataType.Password )]
+        public string PasswordValue { get; set; }
+
+        [Display(Name = "string型(DataType.PhoneNumber)")]
+        [DataType(DataType.PhoneNumber )]
+        public string PhoneNumberValue { get; set; }
+
+        [Display(Name = "string型(DataType.PostalCode)")]
+        [DataType(DataType.PostalCode)]
+        public string PostalCodeValue { get; set; }
+
+        [Display(Name = "string型(DataType.CreditCard)")]
+        [DataType(DataType.CreditCard)]
+        public string CreditCardValue { get; set; }
+
+        [Display(Name = "DateTime(DataType.DateTme)")]
+
+        [DataType(DataType.DateTime)]
+        [DisplayFormat(DataFormatString = "{0:yy年MM月dd日}", ApplyFormatInEditMode = true)]
+        public DateTime DateTimeValue { get; set; }
+
+        [Display(Name = "DateTime(DataType.Date)")]
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:yyyy年MM月dd日}", ApplyFormatInEditMode = true)]
+        public DateTime DateValue { get; set; }
+
+        [Display(Name = "DateTime(DataType.Time)")]
+        [DataType(DataType.Time)]
+        [DisplayFormat(DataFormatString = "{0:HH:mm}", ApplyFormatInEditMode = true)]
+        public DateTime TimeValue { get; set; }
+
+        [Display(Name = "Decimal(DataType.Currency)")]
+        [DataType(DataType.Currency)]
+        [DisplayFormat(DataFormatString = "{0:#,##0.000}", ApplyFormatInEditMode = true)]
+        public Decimal CurrencyValue { get; set; }
+
+        [Display(Name = "Decimal(DataType.Duration)")]
+        [DataType(DataType.Duration)]
+        public Decimal  DurationValue { get; set; }
     }
 
 
