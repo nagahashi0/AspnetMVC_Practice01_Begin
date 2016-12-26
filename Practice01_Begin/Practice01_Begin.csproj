@@ -195,6 +195,7 @@
     <Compile Include="Controllers\HtmlHelperSampleController.cs" />
     <Compile Include="Controllers\ModelBindController.cs" />
     <Compile Include="Controllers\TemplateHelperController.cs" />
+    <Compile Include="Models\BindSampleViewModel.cs" />
     <Compile Include="Models\DisplayColumnViewModels.cs" />
     <Compile Include="Models\HtmlHelperViewModels.cs" />
     <Compile Include="Models\TemplateHelperViewModels.cs" />
@@ -289,6 +290,7 @@
     <Content Include="Views\TemplateHelper\AttributeAction.cshtml" />
     <Content Include="Views\DisplayColumn\Index.cshtml" />
     <Content Include="Views\ModelBind\Show.cshtml" />
+    <Content Include="Views\ModelBind\BindSample.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

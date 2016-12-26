@@ -26,5 +26,23 @@ namespace Practice01_Begin.Controllers
             return Content(value);
         }
 
+        public ActionResult BindSample()
+        {
+            return View();
+        }
+        public ActionResult BindSampleResult(Models.BindSampleViewModel mdl)
+        {
+            string value = "";
+            if (mdl.ImportantValue != null)
+            {
+                value = "重要な処理をする";
+            }
+            else
+            {
+                value = $"「{mdl.StringValue},{mdl.IntValue}」が入力されました。";
+            }
+            return Content(value);
+        }
+
     }
 }

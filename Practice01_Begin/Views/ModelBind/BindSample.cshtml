@@ -1,0 +1,14 @@
+﻿@model Practice01_Begin.Models.BindSampleViewModel
+
+@using (Html.BeginForm("BindSampleResult", "ModelBind"))
+{
+<dl>
+    <dt>@Html.DisplayNameFor(mdl => mdl.StringValue)</dt>
+    <dd>@Html.EditorFor(mdl => mdl.StringValue)</dd>
+    <dt>@Html.DisplayNameFor(mdl => mdl.IntValue)</dt>
+    <dd>@Html.EditorFor(mdl => mdl.IntValue)</dd>
+    <dt>@Html.DisplayNameFor(mdl => mdl.ImportantValue)</dt>
+    <dd>@Html.DisplayFor(mdl => mdl.ImportantValue)</dd>
+</dl>
+<input type = "submit" value = "送信" />
+}
